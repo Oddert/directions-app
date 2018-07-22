@@ -1,0 +1,10 @@
+export const ADD = 'ADD';
+export const COUNTER = 'COUNTER';
+export const SUBMIT_EDIT = 'SUBMIT_EDIT'
+export const DELETE = 'DELETE';
+export const CROSS = 'CROSS';
+export const EDIT_TOGGLE = 'EDIT_TOGGLE';
+export const FILTER_TOGGLE = 'FILTER_TOGGLE';
+export const LOGIN = 'LOGIN';
+export const LOGOUT = 'LOGOUT';
+export const SET_ITEMS = 'SET_ITEMS';
