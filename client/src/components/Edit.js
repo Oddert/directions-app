@@ -22,19 +22,23 @@ class Edit extends React.Component {
   }
 
   componentDidMount() {
-    let filters = [];
+    let that = this;
+    let newFilters = [];
 
     this.props.filters.forEach(each => {
-      filters.push({
+      newFilters.push({
         name: each.name,
         active: false
       });
     });
 
-    filters.forEach(each => {
-      this.props.item.tags.forEach(tag => {
-        if (tag === each.name) { each.active = true; }
-      });
+    console.log('========== Testing new Edit.js initialisation code ==========');
+
+    let filters = newFilters.map(each => {
+      // this.props.item.tags.forEach(tag => {
+      //   if (tag === filter.name) { filter.active = true; }
+      // });
+      if (that.props.item.tags.includes(each.name)) { each.active = true }
       return each;
     });
 
@@ -118,6 +122,11 @@ class Edit extends React.Component {
             </div>
             <textarea type='text' name='description' className='edit-description' value={this.state.description} onChange={this.handleChange} rows='4'></textarea>
             <br />
+            {/* <hr />
+            <p>{this.state.title}</p>
+            <p>{this.state.description}</p>
+            {this.state.filters.map(each => <p key={each.name}>{each.name} : {each.active.toString()}</p>)}
+            <hr /> */}
             <button onClick={this.handleToggle} className='edit_box-cancel'>Cancel</button>
             <button className='edit_box-save'>Save Changes</button>
           </form>

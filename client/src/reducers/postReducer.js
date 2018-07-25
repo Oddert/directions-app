@@ -7,7 +7,7 @@ const postReducer = (state = [], action) => {
     case ADD:
       // return Object.assign({}, state, {items: [...state.items, action.payload]});
       const newItem = Object.assign({}, action.payload, {crossed: false});
-      return [...state, newItem];
+      return [newItem, ...state];
     case DELETE:
       const idx = action.payload;
       const newArr = [...state].slice(0, idx).concat([...state].slice(idx + 1));
