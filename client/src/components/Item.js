@@ -60,8 +60,8 @@ class Item extends React.Component {
       if (item.tags.includes(each)) { tracker++; }
     })
 
-    // console.log(item.title, tracker, this.props.filters.length);
-    if (tracker > 0 || tracker === this.props.filters.length) {
+    // console.log(item.title, tracker, this.props.filters.length, filters.length);
+    if (tracker > 0 || filters.length === 0) {
       return (
         <li className='item' onClick={this.handleClick}>
           <div className='title-container'>
