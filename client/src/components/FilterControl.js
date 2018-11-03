@@ -6,8 +6,10 @@ import Filter from './Filter';
 class FilterControl extends React.Component {
   render() {
     return (
-      <div className='content'>
-        {this.props.filters.map((each, index) => <Filter key={index} index={index} />)}
+      <div>
+        <div className='content'>
+          {this.props.filters.map((each, index) => <Filter key={index} index={index} />)}
+        </div>
       </div>
     )
   }

@@ -23,6 +23,22 @@ import Auth from './components/Auth';
 // connect -Container = map state / dispatch
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      hide: true,
+      width: window.innerWidth
+    }
+  }
+
+  componentDidMount () {
+    window.addEventListener('resize', () => this.setState({ width: window.innerWidth }))
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('resize', () => this.setState({ width: window.innerWidth }))
+  }
+
   render() {
     return (
       <Provider store={store}>
@@ -33,7 +49,7 @@ class App extends Component {
             <h1 className="App-title">Welcome to I'm the captain now</h1>
           </header> */}
           {/* <Counter /> */}
-          <div className='column left'>
+          <div className={this.state.hide ? 'column left hidden' : 'column left'}>
             <div className='top'>
               <h3>Directions App</h3>
             </div>
@@ -43,6 +59,15 @@ class App extends Component {
           </div>
 
           <div className='column right'>
+            {this.state.width <= 764
+              ? <button
+                  className='hide'
+                  onClick={() => this.setState(state => ({ hide: !state.hide }))}
+                  title={this.state.hide ? 'Show filters' : 'Hide filters'}
+                  >
+                  <i className={this.state.hide ? 'fa fa-angle-double-down' : 'fa fa-angle-double-up'}></i>
+                </button>
+              : ''}
             <div className='top'>
               <NewItem />
             </div>

@@ -64,23 +64,29 @@ class Item extends React.Component {
     if (tracker > 0 || filters.length === 0) {
       return (
         <li className='item' onClick={this.handleClick}>
-          <div className='title-container'>
-            <div className={titleClass}>
-              <h2 onClick={this.handleCross} className='text'>
-                {item.title}
-              </h2>
+          <div className='head'>
+            <div className='details'>
+              <div className='title-container'>
+                <div className={titleClass}>
+                  <h2 onClick={this.handleCross} className='text'>
+                    {item.title}
+                  </h2>
+                </div>
+              </div>
+
+              <div className='tag-container'>
+                {item.tags.map(each =>
+                  <div key={each} className='tag-display'>{each}</div>
+                )}
+              </div>
             </div>
+
             <div className='modify'>
               <Edit index={this.props.index} item={item} />
               <Delete index={this.props.index} id={item._id} />
             </div>
           </div>
 
-          <div className='tag-container'>
-            {item.tags.map(each =>
-              <div key={each} className='tag-display'>{each}</div>
-            )}
-          </div>
           {this.state.open ? <p className='description'>{item.description}</p> : ''}
           {this.state.open ?
             <div className='times'>
