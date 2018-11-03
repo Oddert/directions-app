@@ -1,7 +1,7 @@
 import { ADD, DELETE, CROSS, SUBMIT_EDIT, SET_ITEMS } from '../actions/types';
 
 const postReducer = (state = [], action) => {
-  console.log(state, action)
+  // console.log(state, action)
   let newState = [...state];
   switch(action.type) {
     case ADD:

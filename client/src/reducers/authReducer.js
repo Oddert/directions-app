@@ -1,7 +1,7 @@
 import { LOGIN, LOGOUT } from '../actions/types';
 
 const authReducer = (state = {}, action) => {
-  console.log(state, action);
+  // console.log(state, action);
   switch(action.type) {
     case LOGIN:
       return Object.assign({}, state, {

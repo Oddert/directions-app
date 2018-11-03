@@ -6,15 +6,21 @@ import rootReducer from './reducers';
 import initialState from './initialState';
 // import newPostReducer from './reducers/newPostReducer';
 
-const middleware = [thunk];
+const middlewareInput = [thunk];
+
+const middleware = window.__REDUX_DEVTOOLS_EXTENSION__
+  ? compose(
+      applyMiddleware(...middlewareInput)
+    , window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    )
+  : compose(
+      applyMiddleware(...middlewareInput)
+    )
 
 const store = createStore(
   rootReducer,
   initialState,
-  compose(
-    applyMiddleware(...middleware)//,
-    // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  )
+  middleware
 )
 
 export default store;
