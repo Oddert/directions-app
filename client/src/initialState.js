@@ -39,11 +39,11 @@ const initialState = {
     index: 0
   },
   filters: [
-    {name: 'Priority Task', active: true},
-    {name: 'Ongoing', active: true},
-    {name: 'Fun', active: true},
-    {name: 'Health', active: true},
-    {name: 'Social', active: true}
+    {name: 'Priority Task', active: false},
+    {name: 'Ongoing', active: false},
+    {name: 'Fun', active: false},
+    {name: 'Health', active: false},
+    {name: 'Social', active: false}
   ],
   auth: {
     loggedIn: false,
