@@ -17,7 +17,7 @@ body, html {
   display: flex;
   flex-direction: column;
   /* border: 1px solid skyblue; */
-  padding: 5px;
+  /* padding: 5px; */
   position: relative;
 }
 
@@ -38,7 +38,8 @@ body, html {
 .top {
   /* border: 1px solid salmon; */
   box-shadow: 0px 10px 20px rgba(0,0,0,.1);
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
+  z-index: 99;
   flex-shrink: 0;
 }
 
@@ -79,6 +80,7 @@ body, html {
   width: 40px;
   font-size: 20px;
   cursor: pointer;
+  z-index: 399;
 }
 
 .hide:hover {
@@ -133,6 +135,11 @@ body, html {
   display: flex;
   /* margin: 5px; */
   box-sizing: border-box;
+  border-radius: 20px;
+}
+
+.column.right .top, .column.right .top > div {
+  border-radius: 20px;
 }
 
 #new_item_form input, #new_item_form button {
@@ -711,6 +718,8 @@ body, html {
   }
   .directions_list li.item {
     padding: 4px 0px 10px 4px;
+    margin: 4px;
+    box-shadow: 0px 3px 5px rgba(0,0,0,0.1);
   }
   .item .title h2 {
     font-size: 16px;
@@ -726,6 +735,7 @@ body, html {
   }
   .item .description, .item .times {
     font-size: 12px;
+    padding: 0px 10px;
   }
 }
 
