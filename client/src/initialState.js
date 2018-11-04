@@ -45,6 +45,7 @@ const initialState = {
     {name: 'Health', active: false},
     {name: 'Social', active: false}
   ],
+  filterChecked: false,
   auth: {
     loggedIn: false,
     lastCheck: null,

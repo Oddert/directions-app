@@ -61,7 +61,7 @@ class Item extends React.Component {
     })
 
     // console.log(item.title, tracker, this.props.filters.length, filters.length);
-    if (tracker > 0 || filters.length === 0) {
+    if ((tracker > 0 || filters.length === 0) && !(this.props.filterChecked && item.crossed)) {
       return (
         <li className='item' onClick={this.handleClick}>
           <div className='head'>
@@ -105,7 +105,8 @@ class Item extends React.Component {
 
 const mapStateToProps = state => ({
   items: state.items,
-  filters: state.filters
+  filters: state.filters,
+  filterChecked: state.filterChecked
 })
 
 const mapDispatchToProps = dispatch => ({

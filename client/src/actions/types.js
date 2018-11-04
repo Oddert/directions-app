@@ -8,3 +8,4 @@ export const FILTER_TOGGLE = 'FILTER_TOGGLE';
 export const LOGIN = 'LOGIN';
 export const LOGOUT = 'LOGOUT';
 export const SET_ITEMS = 'SET_ITEMS';
+export const TOGGLE_FILTER_CHECKED = 'TOGGLE_FILTER_CHECKED';
