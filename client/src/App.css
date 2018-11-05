@@ -257,6 +257,7 @@ body, html {
   align-items: center;
   flex-direction: row;
   /* width: 100%; */
+  position: relative;
 }
 
 .item .times {
@@ -270,12 +271,19 @@ body, html {
 
 
 .edit_box {
-  position: relative;
-  width: 75vw;
+  position: absolute;
+  background: #fff;
+  border: 1px solid #bec3c7;
+  border-radius: 20px;
+  box-sizing: border-box;
+  box-shadow: 5px 5px 30px rgba(0,0,0,.2);
+  z-index: 9999;
+  padding: 50px 0px;
+  width: 60vw;
   /* width: 100%; */
   flex: 5;
   top: 100%;
-  left: 0;
+  right: 5vw;
   text-align: center;
 }
 
