@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-app.use(express.static(path.join(__dirname + '/production_build')));
+app.use(express.static(path.join(__dirname, '/production_build')));
 
 app.use(require('express-session')({
   secret: 'Argos Limited ia a member of Home Retail Group plc (the "Group") which includes Habitat Retail Limited and other associated companies.',
@@ -256,4 +256,10 @@ app.post('/api/auth/logout', (req, res) => {
   })
 })
 
-app.listen(5000, () => console.log(`${new Date().toLocaleTimeString()}: Express server initialised on port: 5000...`));
+const PORT = process.env.PORT || 5000
+app.listen(
+  PORT
+  , () => console.log(
+    `${new Date().toLocaleTimeString('en-GB')}: Express server initialised on port: ${PORT}...`
+  )
+);
