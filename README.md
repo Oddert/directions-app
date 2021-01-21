@@ -5,13 +5,13 @@ An experimental take on daily orginisation and ballancing productivity, recreati
 Front end built with React / Redux, backend built with express, MongoDB / Mongoose for storage.
 
 ## Live Demo
-[https://oddert-chess-game-1.glitch.me/](https://oddert-chess-game-1.glitch.me/)
+[https://resolute-church.glitch.me/](https://resolute-church.glitch.me/)
 
 ## Installation
 You will need to setup a mongodb server and connect it via an .env file
 ```
-$ git clone https://github.com/Oddert/chess-game.git
-$ cd chess-game/client
+$ git clone https://github.com/Oddert/directions-app.git
+$ cd directions-app/client
 $ npm i
 $ cd ..
 $ npm i
